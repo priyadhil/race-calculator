@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CRUD</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    
+    
+  </head>
+  <body>
+    <div class="container-fluid">
+      
+      <div class="row">
+       <div class="col-lg-9 col-xs-6 col-sm-12 w-50 m-auto main-container">
+          <div class="card mt-1">
+              <div class="card-header text-center bg-dark text-light  h-25">
+               <h3> Race Details </h3>
+              </div>
+              <div class="card-body bg-secondary">
+                  <div id="date" class="text-right text-light" ></div>
+                  
+                  <div class="results" hidden></div>
+                  <form id="form" class="form">
+                      <div class="form-group">
+                          <label class="text-light">1 KM Timer</label>
+                          <input type="text" required name="name" id="racerName" class="ml-2 w-50 form-control" placeholder="Racer Name">
+                          <label id="errMsg" class="text-warning"> </label>
+                      </div>
+                      
+                      <div class="form-group mt-1">
+                        <label class="ml-2 pl-4" id="racerCount" hidden>Lap Count</label>
+                        
+                    </div>
+                    <div class="form-group mt-1">
+                        <label class="ml-2" id="racerTotal" hidden>Total Time</label>
+                       
+                    </div>
+                    <div class="form-group mt-1">
+                        <label class="ml-1 " id="racerAverage" hidden>Average Time</label>
+                        
+                    </div>
+                    <div class="form-group mt-1">
+                        <label class="pl-5" id="racerLast" hidden>Last Lap time</label>
+                        
+                    </div>
+                    
+                  
+                            
+                  <div class="clock text-light "></div>
+                <div class="controls w-50">
+                  <a
+                    href="#"
+                    class="btn btn-success mt-1 w-25"
+                    onClick="clock.start();"
+                    >Start</a
+                  >
+                  <a
+                    href="#"
+                    class="btn btn-primary mt-1 w-25"
+                    id= "btn-lap"
+                    onClick="clock.lap();"
+                    >Lap</a
+                  >
+                  <a
+                    href="#"
+                    class="btn btn-danger mt-1 w-25"
+                    onClick="clock.stop();"
+                    >Stop</a
+                  >
+                </div> 
+                  <div class="ml-4 text-center">
+                      <button type="submit" id="submit" class="btn btn-warning mt-1 text-light">Add Racer
+                      </button>
+                      
+                              
+                </div>
+                  </form>
+              </div>
+          </div>
+           <div class="table-responsive mt-1 mtable">          
+                <table id="regTable" class="table table-stripped table-bordered table-hover text-light">
+<thead>
+    <tr  class="bg-dark">
+        <td>Name</td>
+        <td>Lap Count</td>
+        <td>Total Time</td>
+        <td>Average Time</td>
+        <td>Last Lap Time</td>
+    </tr>
+</thead>
+<tbody id="tablebody" class="text-dark">
+
+</tbody>
+</table>
+                    </div> 
+      </div>
+     
+    </div>
+    <script src="common.js">
+       
+    </script>
+  </body>
+</html>
