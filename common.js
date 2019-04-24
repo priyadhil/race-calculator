@@ -4,10 +4,10 @@ var selectedRow = null;
 //Instantiate racer
 window.onload = function init() {
   document.getElementById("tablebody").innerHTML = "";
-  if (typeof racerArray[1] == "undefined") {
+  // if (typeof racerArray[1] == "undefined") {
+  if (localStorage.racerRecord) {
     document.getElementById("errMsg").innerHTML =
       "* Add racer and start the timer";
-  } else if (localStorage.racerRecord) {
     //Storing racer data's in to local storage
     racerArray = JSON.parse(localStorage.racerRecord);
     for (var i = 0; i < racerArray.length; i++) {
